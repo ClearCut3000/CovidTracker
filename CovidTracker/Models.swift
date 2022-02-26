@@ -15,3 +15,24 @@ struct State: Codable {
 struct StateListResponse: Codable {
   let data: [State]
 }
+
+struct CovidDataResponse: Codable {
+  let data: [CovidDayData]
+}
+
+struct CovidDayData: Codable {
+  let cases: CovidCases
+  let date: String
+}
+struct CovidCases: Codable {
+  let total: TotalCases
+}
+
+struct TotalCases: Codable {
+  let value: Int?
+}
+
+struct DayData {
+  let date: Date
+  let count: Int
+}

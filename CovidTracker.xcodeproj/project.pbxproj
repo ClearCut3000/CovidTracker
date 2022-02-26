@@ -16,6 +16,7 @@
 		36947ADD27CA719B00222195 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947ADC27CA719B00222195 /* FilterViewController.swift */; };
 		36947ADF27CA723900222195 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947ADE27CA723900222195 /* APICaller.swift */; };
 		36947AE127CA72A000222195 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947AE027CA72A000222195 /* Models.swift */; };
+		36947AE327CA96B200222195 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947AE227CA96B200222195 /* DateFormatter+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		36947ADC27CA719B00222195 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		36947ADE27CA723900222195 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		36947AE027CA72A000222195 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		36947AE227CA96B200222195 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				36947ADC27CA719B00222195 /* FilterViewController.swift */,
 				36947ADE27CA723900222195 /* APICaller.swift */,
 				36947AE027CA72A000222195 /* Models.swift */,
+				36947AE227CA96B200222195 /* DateFormatter+Extension.swift */,
 			);
 			path = CovidTracker;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				36947ACD27CA708700222195 /* ViewController.swift in Sources */,
 				36947AC927CA708700222195 /* AppDelegate.swift in Sources */,
 				36947ADD27CA719B00222195 /* FilterViewController.swift in Sources */,
+				36947AE327CA96B200222195 /* DateFormatter+Extension.swift in Sources */,
 				36947AE127CA72A000222195 /* Models.swift in Sources */,
 				36947ADF27CA723900222195 /* APICaller.swift in Sources */,
 				36947ACB27CA708700222195 /* SceneDelegate.swift in Sources */,

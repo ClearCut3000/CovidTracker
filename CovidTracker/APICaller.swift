@@ -24,7 +24,7 @@ class APICaller {
   }
 
   //MARK: - Methods
-  public func getCovidData(for scope: DataScope, completion: @escaping (Result<String, Error>) -> Void ) {
+  public func getCovidData(for scope: DataScope, completion: @escaping (Result<[DayData], Error>) -> Void ) {
     let urlString: String
     switch scope {
     case .national:
@@ -36,7 +36,12 @@ class APICaller {
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
       guard let data = data, error == nil else { return }
       do {
-        let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+        let result = try JSONDecoder().decode(CovidDataResponse.self, from: data)
+        let models: [DayData] = result.data.compactMap {
+          guard let value = $0.cases.total.value, let date = DateFormatter.dayFormatter.date(from: $0.date) else { return nil }
+          return DayData(date: date, count: value)
+        }
+        completion(.success(models))
       }
       catch {
         completion(.failure(error))
