@@ -13,6 +13,9 @@
 		36947AD027CA708700222195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36947ACE27CA708700222195 /* Main.storyboard */; };
 		36947AD227CA708C00222195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36947AD127CA708C00222195 /* Assets.xcassets */; };
 		36947AD527CA708C00222195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36947AD327CA708C00222195 /* LaunchScreen.storyboard */; };
+		36947ADD27CA719B00222195 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947ADC27CA719B00222195 /* FilterViewController.swift */; };
+		36947ADF27CA723900222195 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947ADE27CA723900222195 /* APICaller.swift */; };
+		36947AE127CA72A000222195 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947AE027CA72A000222195 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		36947AD127CA708C00222195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36947AD427CA708C00222195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36947AD627CA708C00222195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36947ADC27CA719B00222195 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		36947ADE27CA723900222195 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		36947AE027CA72A000222195 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				36947AD127CA708C00222195 /* Assets.xcassets */,
 				36947AD327CA708C00222195 /* LaunchScreen.storyboard */,
 				36947AD627CA708C00222195 /* Info.plist */,
+				36947ADC27CA719B00222195 /* FilterViewController.swift */,
+				36947ADE27CA723900222195 /* APICaller.swift */,
+				36947AE027CA72A000222195 /* Models.swift */,
 			);
 			path = CovidTracker;
 			sourceTree = "<group>";
@@ -140,6 +149,9 @@
 			files = (
 				36947ACD27CA708700222195 /* ViewController.swift in Sources */,
 				36947AC927CA708700222195 /* AppDelegate.swift in Sources */,
+				36947ADD27CA719B00222195 /* FilterViewController.swift in Sources */,
+				36947AE127CA72A000222195 /* Models.swift in Sources */,
+				36947ADF27CA723900222195 /* APICaller.swift in Sources */,
 				36947ACB27CA708700222195 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
