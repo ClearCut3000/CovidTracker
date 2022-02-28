@@ -5,9 +5,10 @@
 //  Created by Николай Никитин on 26.02.2022.
 //
 
+import Charts
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   //MARK: - Properties
   private let tableView: UITableView = {
@@ -22,6 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     didSet {
       DispatchQueue.main.async {
         self.tableView.reloadData()
+        self.createGraph()
       }
     }
   }
@@ -29,7 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   private let numberFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
     formatter.locale = .current
-    formatter.numberStyle = .scientific
+    formatter.numberStyle = .decimal
     formatter.groupingSeparator = ","
     return formatter
   }()
@@ -49,7 +51,44 @@ class ViewController: UIViewController, UITableViewDataSource {
     tableView.frame = view.bounds
   }
 
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    DispatchQueue.main.async {
+      self.createGraph()
+    }
+  }
+
 //MARK: - Methods
+  private func createGraph() {
+    let width = UIScreen.main.bounds.size.width
+    let height = UIScreen.main.bounds.size.height
+    var headerHeight = view.frame.size.width / 1.5
+    var headerWidht = view.frame.size.width
+    if width > height {
+      headerWidht = width
+      headerHeight = height * 0.7
+    }
+    let headerView = UIView(frame: CGRect(x: 0, y: 0, width: headerWidht, height: headerHeight))
+    headerView.clipsToBounds = true
+    var entries: [BarChartDataEntry] = []
+    let set = dayData.prefix(20)
+    for index in 0..<set.count {
+      let data = set[index]
+      entries.append(.init(x: Double(index), y: Double(data.count)))
+    }
+    let dataSet = BarChartDataSet(entries: entries)
+    dataSet.colors = ChartColorTemplates.joyful()
+    let chart = BarChartView(frame: CGRect(x: 0, y: 0, width: headerWidht, height: headerHeight))
+    let data: BarChartData = BarChartData(dataSet: dataSet)
+    chart.data = data
+    chart.rightAxis.enabled = false
+    chart.xAxis.labelPosition = .bottom
+    chart.legend.enabled = false
+    chart.animate(xAxisDuration: 2.5)
+    headerView.addSubview(chart)
+    tableView.tableHeaderView = headerView
+  }
+
   private func createText(with data: DayData) -> String? {
     let dateString = DateFormatter.prettyFormatter.string(from: data.date)
     let total = self.numberFormatter.string(from: NSNumber(value: data.count))
@@ -59,6 +98,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   private func configureTable() {
     view.addSubview(tableView)
     tableView.dataSource = self
+    tableView.delegate = self
   }
 
   private func  createFilterButton() {
@@ -103,6 +143,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     cell.textLabel?.text = createText(with: data)
     return cell
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    let VC = DailyViewController()
+    VC.daily = dayData[indexPath.row]
+    self.navigationController?.pushViewController(VC, animated: true)
   }
 
 }

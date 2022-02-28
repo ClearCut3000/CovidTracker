@@ -30,9 +30,19 @@ struct CovidCases: Codable {
 
 struct TotalCases: Codable {
   let value: Int?
+  let calculated: CalculatedValues
+}
+
+struct CalculatedValues: Codable {
+  let population_percent: Double?
+  let change_from_prior_day: Int?
+  let seven_day_change_percent: Double?
 }
 
 struct DayData {
   let date: Date
   let count: Int
+  let percent: Double
+  let change: Int
+  let sevenDayChange: Double
 }

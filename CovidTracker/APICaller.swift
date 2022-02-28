@@ -9,7 +9,7 @@ import Foundation
 
 class APICaller {
 
-  //AMRK: - Properties
+  //MARK: - Properties
   static let shared = APICaller()
 
   private init () {}
@@ -38,8 +38,13 @@ class APICaller {
       do {
         let result = try JSONDecoder().decode(CovidDataResponse.self, from: data)
         let models: [DayData] = result.data.compactMap {
-          guard let value = $0.cases.total.value, let date = DateFormatter.dayFormatter.date(from: $0.date) else { return nil }
-          return DayData(date: date, count: value)
+          guard let value = $0.cases.total.value,
+                let date = DateFormatter.dayFormatter.date(from: $0.date),
+                let percents = $0.cases.total.calculated.population_percent,
+                let priorChange = $0.cases.total.calculated.change_from_prior_day,
+                let weekChange = $0.cases.total.calculated.seven_day_change_percent
+          else { return nil }
+          return DayData(date: date, count: value, percent: percents, change: priorChange, sevenDayChange: weekChange)
         }
         completion(.success(models))
       }

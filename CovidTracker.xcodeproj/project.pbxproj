@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362FD44B27CBB3EA000C0B56 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 362FD44A27CBB3EA000C0B56 /* Charts */; };
+		362FD44D27CBF2EB000C0B56 /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362FD44C27CBF2EB000C0B56 /* DailyViewController.swift */; };
+		362FD45027CD3755000C0B56 /* screenshots.gif in Resources */ = {isa = PBXBuildFile; fileRef = 362FD44F27CD3755000C0B56 /* screenshots.gif */; };
 		36947AC927CA708700222195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947AC827CA708700222195 /* AppDelegate.swift */; };
 		36947ACB27CA708700222195 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947ACA27CA708700222195 /* SceneDelegate.swift */; };
 		36947ACD27CA708700222195 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36947ACC27CA708700222195 /* ViewController.swift */; };
@@ -20,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		362FD44C27CBF2EB000C0B56 /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
+		362FD44F27CD3755000C0B56 /* screenshots.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = screenshots.gif; sourceTree = "<group>"; };
 		36947AC527CA708700222195 /* CovidTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36947AC827CA708700222195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36947ACA27CA708700222195 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,15 +44,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				362FD44B27CBB3EA000C0B56 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		362FD44E27CD3683000C0B56 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				362FD44F27CD3755000C0B56 /* screenshots.gif */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		36947ABC27CA708700222195 = {
 			isa = PBXGroup;
 			children = (
+				362FD44E27CD3683000C0B56 /* Screenshots */,
 				36947AC727CA708700222195 /* CovidTracker */,
 				36947AC627CA708700222195 /* Products */,
 			);
@@ -75,6 +90,7 @@
 				36947ADE27CA723900222195 /* APICaller.swift */,
 				36947AE027CA72A000222195 /* Models.swift */,
 				36947AE227CA96B200222195 /* DateFormatter+Extension.swift */,
+				362FD44C27CBF2EB000C0B56 /* DailyViewController.swift */,
 			);
 			path = CovidTracker;
 			sourceTree = "<group>";
@@ -95,6 +111,9 @@
 			dependencies = (
 			);
 			name = CovidTracker;
+			packageProductDependencies = (
+				362FD44A27CBB3EA000C0B56 /* Charts */,
+			);
 			productName = CovidTracker;
 			productReference = 36947AC527CA708700222195 /* CovidTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +142,9 @@
 				Base,
 			);
 			mainGroup = 36947ABC27CA708700222195;
+			packageReferences = (
+				362FD44927CBB3EA000C0B56 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 36947AC627CA708700222195 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				362FD45027CD3755000C0B56 /* screenshots.gif in Resources */,
 				36947AD527CA708C00222195 /* LaunchScreen.storyboard in Resources */,
 				36947AD227CA708C00222195 /* Assets.xcassets in Resources */,
 				36947AD027CA708700222195 /* Main.storyboard in Resources */,
@@ -156,6 +179,7 @@
 				36947AE327CA96B200222195 /* DateFormatter+Extension.swift in Sources */,
 				36947AE127CA72A000222195 /* Models.swift in Sources */,
 				36947ADF27CA723900222195 /* APICaller.swift in Sources */,
+				362FD44D27CBF2EB000C0B56 /* DailyViewController.swift in Sources */,
 				36947ACB27CA708700222195 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +400,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		362FD44927CBB3EA000C0B56 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		362FD44A27CBB3EA000C0B56 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 362FD44927CBB3EA000C0B56 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 36947ABD27CA708700222195 /* Project object */;
 }
